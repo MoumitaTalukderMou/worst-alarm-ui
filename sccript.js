@@ -14,37 +14,16 @@ const hope = document.getElementById("hope");
 const destiny = document.getElementById("destiny");
 const sleep = document.getElementById("sleep");
 
-const enableBtn = document.getElementById("enableMotionBtn");
-
-// ---------- iOS motion enable ----------
-enableBtn.addEventListener("click", () => {
-  if (typeof DeviceMotionEvent.requestPermission === 'function') {
-    DeviceMotionEvent.requestPermission()
-      .then(response => {
-        if(response === 'granted'){
-          status.innerText = "Motion sensors enabled.";
-          initOrientation();
-        } else {
-          status.innerText = "Permission denied.";
-        }
-      }).catch(console.error);
-  } else {
-    status.innerText = "Motion auto-enabled.";
-    initOrientation();
-  }
-});
-
 // ---------- ROTATE → HOUR ----------
-function initOrientation(){
-  window.addEventListener("deviceorientation", function(e){
+window.addEventListener("deviceorientation", function(e){
     let gamma = e.gamma;
 
-    if(gamma > 20) hour = (hour + 1) % 24;
-    if(gamma < -20) hour = (hour - 1 + 24) % 24;
+    // Android-friendly small tilt detection
+    if(gamma > 5) hour = (hour + 1) % 24;
+    if(gamma < -5) hour = (hour - 1 + 24) % 24;
 
     updateTime();
-  });
-}
+});
 
 // ---------- SWIPE → MINUTE ----------
 document.addEventListener("touchstart", e => {
@@ -54,8 +33,8 @@ document.addEventListener("touchstart", e => {
 document.addEventListener("touchend", e => {
   let diff = startY - e.changedTouches[0].clientY;
 
-  if(diff > 50) minute = (minute + 1) % 60;
-  if(diff < -50) minute = (minute - 1 + 60) % 60;
+  if(diff > 30) minute = (minute + 1) % 60;  // smaller threshold
+  if(diff < -30) minute = (minute - 1 + 60) % 60;
 
   updateTime();
 });
