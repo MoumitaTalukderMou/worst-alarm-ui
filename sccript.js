@@ -18,8 +18,8 @@ enableBtn.addEventListener('click', () => {
 
     window.addEventListener('deviceorientation', e => {
         let gamma = e.gamma;
-        if(gamma > 5) hour = (hour + 1) % 24;
-        if(gamma < -5) hour = (hour - 1 + 24) % 24;
+        if(gamma > 3) hour = (hour + 1) % 24;
+        if(gamma < -3) hour = (hour - 1 + 24) % 24;
         updateTime();
     });
 
