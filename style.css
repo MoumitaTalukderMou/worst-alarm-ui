@@ -1,18 +1,18 @@
 body {
-    background: black;
-    color: hotpink;
-    font-family: Comic Sans MS;
-    text-align: center;
+  background: black;
+  color: hotpink;
+  font-family: "Comic Sans MS";
+  text-align: center;
 }
 
 h1 {
-    transform: rotate(-2deg);
+  transform: rotate(-2deg);
 }
 
 button {
-    font-size: 22px;
-    padding: 20px;
-    margin-top: 40px;
-    background: lime;
-    border-radius: 50%;
+  font-size: 22px;
+  padding: 20px;
+  margin-top: 20px;
+  background: lime;
+  border-radius: 50%;
 }
