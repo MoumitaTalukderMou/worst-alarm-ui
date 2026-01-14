@@ -2,31 +2,28 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fate Alarm</title>
+<title>Fate Wheel Alarm</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>⏰ Fate Alarm Clock</h1>
+<h1>⏰ Fate Wheel Alarm</h1>
 
 <h2 id="time">Hour: 0 | Minute: 0</h2>
-<p id="status">Tap "Enable Motion" first!</p>
+<p id="status">Try to set your alarm… if you can!</p>
 
-<button id="enableMotionBtn">Enable Motion Sensors</button>
-
-<div>
-  Hope<br>
-  <input type="range" id="hope"><br><br>
-  Destiny<br>
-  <input type="range" id="destiny"><br><br>
-  Sleep Debt<br>
-  <input type="range" id="sleep">
+<div id="controls">
+  <button id="hourBtn">Hour</button>
+  <button id="minuteBtn">Minute</button>
+  <button id="setBtn">Hold to Set Alarm</button>
 </div>
 
-<br>
+<div>
+  Hope<br><input type="range" id="hope"><br>
+  Destiny<br><input type="range" id="destiny"><br>
+  Sleep Debt<br><input type="range" id="sleep">
+</div>
 
-<button id="setBtn">Hold to Set Alarm</button>
-
-<script src="script.js"></script>
 </body>
+<script src="script.js"></script>
 </html>

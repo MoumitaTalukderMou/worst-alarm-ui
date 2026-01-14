@@ -3,16 +3,21 @@ body {
   color: hotpink;
   font-family: "Comic Sans MS";
   text-align: center;
+  transition: background 0.5s;
 }
 
-h1 {
-  transform: rotate(-2deg);
-}
+h1 { transform: rotate(-5deg); }
 
 button {
   font-size: 22px;
   padding: 20px;
-  margin-top: 20px;
-  background: lime;
+  margin: 10px;
   border-radius: 50%;
+  position: relative;
+  transition: all 0.3s;
+}
+
+input[type="range"] {
+  width: 80%;
+  margin: 10px;
 }
